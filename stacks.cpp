@@ -44,33 +44,58 @@ class Stack {
   int maxelem;
 };
 
+	void menu(){
+		
+		cout<<"What do you like to do? \n";
+		cout<<"1: Push \n";
+		cout<<"2: Pop \n";
+		cout<<"3: Display \n";
+		cout<<"4: Exit \n";
+		
+	}
+
 int main() {
   Stack * s = new Stack(100);
-
-  s -> display();
-  s -> push(1);
-  s -> display();
-  s -> push(2);
-  s -> display();
-  s -> push(3);
-  s -> display();
-  s -> push(4);
-  s -> display();
-  s -> pop();
-  s -> display();
-  s -> pop();
-  s -> display();
-  s -> push(10);
-  s -> display();
-  s -> pop();
-  s -> display();
-  s -> pop();
-  s -> display();
-  s -> pop();
-  s -> display();
-  s -> pop();
-  s -> display();
-  s -> pop();
-  s -> display();
+  
+  int choice,n;
+  menu();
+  cout<<endl;
+  
+ 
+  	cout<<"Enter choice: ";
+  	cin>>choice;
+  
+   	while(choice!=4){
+   		
+  	if(choice==1){
+  		cout<<"Push: ";
+  		cin>>n;
+  		s -> push(n);
+  		cout<<endl;
+	  }
+	  
+	if(choice==2){
+		
+  		s -> pop();
+  		s -> display();
+  	
+	  }
+	  
+	if(choice==3){
+  		cout<<"Display: ";
+  		s -> display();
+  		cout<<endl;
+	  }
+	  
+	  menu();
+	  cout<<endl;
+	  cout<<"Enter choice: ";
+  	  cin>>choice;	
+  	}
+  	
+  	
+  
   return 1;
+  
+
 }
