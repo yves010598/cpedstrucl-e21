@@ -26,7 +26,7 @@ void search(int num) {
   n = head;
   while (n != NULL) {
   	if(n->data==num){
-    cout<<"Location: " << c;
+    cout<<"Location: " << c <<" ";
 	} 
     n = n -> next;
     c++;
@@ -82,7 +82,7 @@ int delete_val(int num) {
     if (temp -> data == num) {
       if (temp == head) {
         head = temp -> next;
-        free(temp);
+       //free(temp);
         return 1;
       } else {
         prev -> next = temp -> next;
@@ -116,8 +116,8 @@ void insert(int num) {
     add(num);
   } else {
     while (temp != NULL) {
-      if (temp -> data != -1)
-        c++;
+      //if (temp -> data != -1)
+      //c++;
       temp = temp -> next;
     }
     if (c == 0)
