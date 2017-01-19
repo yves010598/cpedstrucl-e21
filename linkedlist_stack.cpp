@@ -24,7 +24,7 @@ void display(struct node * r) {
 void push(int num) {
     int push;
     struct node *ptr;
-    cout<<"Enter a number to insert:";
+    cout<<"Enter a number to insert: ";
     cin>>push;
     ptr=new node;
     ptr->data=push;
@@ -34,6 +34,19 @@ void push(int num) {
     head=ptr;
     cout<<"Push successful";
 }
+void pop(int num) {
+    struct node *temp;
+    if(head==NULL)
+    {
+        cout<<"The list is empty";
+        return;
+    }
+    temp=head;
+    head=head->next;
+    cout<<"Poped value is: "<<temp->data;
+    delete temp;
+}
+
 
 int main() {
   int i, num, loc;
@@ -59,7 +72,9 @@ int main() {
   		push(num);
   		break;
   		
-
+  	  case 2:
+  	  	pop(num);
+  	  	break;
   	  	
   	  case 3:
         if (head == NULL) {
@@ -71,8 +86,8 @@ int main() {
         break;
   	  	
   	  case 4:
-       return 0; 
-       default:
+        return 0; 
+        default:
         cout<<"Invalid option\n";
        }
     }
